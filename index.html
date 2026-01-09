@@ -14,9 +14,7 @@ body{
   font-family:monospace;
   font-size:22px;
 }
-#msg{
-  text-align:center;
-}
+#msg{text-align:center;}
 </style>
 </head>
 <body>
@@ -26,18 +24,26 @@ body{
 <span id="time">20</span> seconds
 </div>
 
+<audio id="music" src="music.mp3"></audio>
+
 <script>
 let t = 20;
 let timer = setInterval(()=>{
   t--;
   document.getElementById("time").innerText = t;
+
   if(t === 0){
     clearInterval(timer);
     document.getElementById("msg").innerHTML =
-    "✅ System Started Successfully<br>From Ali ❤️";
+    "✅ System Started Successfully<br>From Ali gohar ❤️";
+
+    // Play music after 20 sec
+    let audio = document.getElementById("music");
+    audio.play().catch(()=>{});
   }
 },1000);
 </script>
 
 </body>
 </html>
+
