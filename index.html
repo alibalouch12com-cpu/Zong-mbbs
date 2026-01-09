@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>System Restarting</title>
+<style>
+body{
+  background:black;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:monospace;
+  font-size:22px;
+}
+#msg{
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div id="msg">
+🔄 System Restarting...<br>
+<span id="time">20</span> seconds
+</div>
+
+<script>
+let t = 20;
+let timer = setInterval(()=>{
+  t--;
+  document.getElementById("time").innerText = t;
+  if(t === 0){
+    clearInterval(timer);
+    document.getElementById("msg").innerHTML =
+    "✅ System Started Successfully<br>From Mohsin ❤️";
+  }
+},1000);
+</script>
+
+</body>
+</html>
